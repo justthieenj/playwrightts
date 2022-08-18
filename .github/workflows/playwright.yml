@@ -1,9 +1,9 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [ main, master, integrate_github_actions ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
+  schedule:
+    - cron: "0 11 * * 1,3"
 jobs:
   test:
     timeout-minutes: 60
