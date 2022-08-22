@@ -49,6 +49,12 @@ const config: PlaywrightTestConfig = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        contextOptions: {
+          logger: {
+            isEnabled: (name, severity) => false,
+            log: (name, severity, message, args) => console.log(`${name} ${message}`)
+          }
+        }
       },
     },
 
