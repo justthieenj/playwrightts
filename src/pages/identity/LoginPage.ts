@@ -32,7 +32,7 @@ class LoginPage {
     await this.txtUsername.type(userName);
     await this.txtPassword.type(password);
     await this.btnLogin.click();
-    await this.enterOTPCode();
+    // await this.enterOTPCode();
   }
 }
 
