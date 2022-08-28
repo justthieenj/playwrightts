@@ -1,20 +1,20 @@
 import { Locator, Page, Expect } from "@playwright/test";
 import { empName } from "../../utils/constants";
-import DLocator from "../../utils/dynamic-locator";
+import { CustomLocator } from "../../utils/custom-locator";
 
 
 class DashBoardPage {
   readonly page: Page;
   readonly expect: Expect;
   readonly labelLeaveBalanceStatus: Locator;
-  readonly cellsLeaveToday: DLocator;
+  readonly cellsLeaveToday: CustomLocator;
   readonly days: Locator;
 
   constructor(page: Page, expect: Expect) {
     this.page = page;
     this.expect = expect;
     this.labelLeaveBalanceStatus = page.locator("text=My Leave Balance Status");
-    this.cellsLeaveToday = new DLocator(
+    this.cellsLeaveToday = new CustomLocator(
       page,
       "//td[@data-date='%s']//ancestor::thead/following-sibling::tbody//td[@class='fc-event-container'][count(//thead//td[@data-date='%s']/preceding-sibling::td)]//span"
     );
