@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import LoginPage from "../src/pages/LoginPage";
-import IdentityPage from "../src/pages/IdentityPage";
+import LoginPage from "../src/pages/identity/LoginPage";
+import IdentityPage from "../src/pages/identity/IdentityPage";
 import * as account from "./../account.json";
 
 test("Test login sts insider", async ({ page }) => {
