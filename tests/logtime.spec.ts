@@ -15,4 +15,5 @@ test("Test log time today successfully", async ({ page }) => {
   const insiderPage = new InsiderPage(page)
   await insiderPage.openTodayLogTimeModal();
   await insiderPage.inputLogTime("8", "test comment log time on August 25th");
+  await expect(insiderPage.lblEvent).toHaveText("8 Project XV");
 });
