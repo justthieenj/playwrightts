@@ -23,8 +23,8 @@ class DashBoardPage {
 
   async getLeaveTodayList(): Promise<string[]> {
     const today = new Date().toISOString().split("T")[0];
+    await this.expect(this.labelLeaveBalanceStatus).toBeVisible();
     const elementLeaveToday = await this.cellsLeaveToday.setDynamic(today, today);
-    await sleep(1000);
     return elementLeaveToday.allTextContents();
   }
 }
