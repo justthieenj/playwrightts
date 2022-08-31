@@ -1,6 +1,6 @@
 import { Locator, Page, Expect } from "@playwright/test";
-import { empName } from "../../utils/constants";
 import { CustomLocator } from "../../utils/custom-locator";
+import { sleep } from "../../utils/utils";
 
 
 class DashBoardPage {
@@ -22,11 +22,10 @@ class DashBoardPage {
   }
 
   async getLeaveTodayList(): Promise<string[]> {
-    // const today = new Date().toISOString().split("T")[0];
-    const today = "2022-08-26"; // friday
+    const today = new Date().toISOString().split("T")[0];
     const elementLeaveToday = await this.cellsLeaveToday.setDynamic(today, today);
-    await this.expect(elementLeaveToday).toContainText(empName);
-    return await elementLeaveToday.allTextContents();
+    await sleep(1000);
+    return elementLeaveToday.allTextContents();
   }
 }
 
