@@ -21,7 +21,6 @@ class InsiderPage {
     constructor(page: Page) {
         this.page = page;
         this.btnDayNumber = page.locator("//span[normalize-space()='25']");
-        this.lblEvent = page.locator("//td[@data-date='2022-08-25']//ancestor::thead/following-sibling::tbody//td[@class='fc-event-container'][count(//thead//td[@data-date='2022-08-25']/preceding-sibling::td)]");
         this.lblLogTime = page.locator("//div//section[@class='dialog-section header']");
         this.btnDate = page.locator("//div[@class='calendar-icon']");
         this.txtHours = page.locator("//input[@id='hour']");

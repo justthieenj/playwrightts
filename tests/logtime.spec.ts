@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
-import LoginPage from "../src/pages/LoginPage";
-import IdentityPage from "../src/pages/IdentityPage";
-import InsiderPage from "../src/pages/InsiderPage";
+import LoginPage from "../src/pages/identity/LoginPage";
+import IdentityPage from "../src/pages/identity/IdentityPage";
+import InsiderPage from "../src/pages/leave/InsiderPage";
 import * as account from "./../account.json";
 
 test("Test log time today successfully", async ({ page }) => {
@@ -15,5 +15,5 @@ test("Test log time today successfully", async ({ page }) => {
   const insiderPage = new InsiderPage(page)
   await insiderPage.openTodayLogTimeModal();
   await insiderPage.inputLogTime("8", "test comment log time on August 25th");
-  await expect(insiderPage.lblEvent).toHaveText("8 Project XV");
+  await expect(insiderPage.lblEvent).toHaveText("8 Project X");
 });
