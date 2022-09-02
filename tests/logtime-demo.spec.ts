@@ -18,6 +18,6 @@ test("Test log time insider with dropdown custom locator", async ({ page }) => {
 
   // log time popup
   const insiderPage = new InsiderPage(page)
-  insiderPage.openTodayLogTimeModal();
-  insiderPage.inputTodayLogtime("8","1x - Normal working days", "Code", "Project X", "Check input comment with 20 characters");
+  await insiderPage.openTodayLogTimeModal();
+  await insiderPage.inputTodayLogtime("8","1x - Normal working days", "Code", "Project X", "Check input comment with 20 characters");
 })

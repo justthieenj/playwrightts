@@ -58,7 +58,7 @@ class InsiderPage {
   await this.txtComment.type(comment);
   await this.btnSaveClose.click();
   const todayEvent = await this.lblEvent.setDynamic(today, today);
-  await expect(todayEvent).toHaveText(hour + project);
+  await expect(todayEvent).toHaveText(hour + " " + project);
   }
 }
   export default InsiderPage;
