@@ -8,6 +8,7 @@
         "wix.vscode-import-cost",
         "ritwickdey.liveserver",
         "pkief.material-icon-theme",
-        "ms-vsliveshare.vsliveshare"
+        "ms-vsliveshare.vsliveshare",
+        "esbenp.prettier-vscode"
     ]
 }
