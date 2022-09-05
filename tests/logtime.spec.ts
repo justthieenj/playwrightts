@@ -5,7 +5,7 @@ import LoginPage from "../src/pages/identity/LoginPage";
 import InsiderPage from "../src/pages/insider/InsiderPage";
 import { identityURL, insiderURL } from "../src/utils/constants";
 
-test("Test log time insider with dropdown custom locator", async ({ page }) => {
+test("Test log time insider", async ({ page }) => {
   await test.step(`Navigate to ${identityURL}`, async () => {
     await page.goto(identityURL);
   });
