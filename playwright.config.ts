@@ -49,6 +49,7 @@ const config: PlaywrightTestConfig = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        screenshot: "on",
         contextOptions: {
           logger: {
             isEnabled: (name, severity) => false,
@@ -58,19 +59,19 @@ const config: PlaywrightTestConfig = {
       },
     },
 
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-      },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //   },
+    // },
 
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-      },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {

@@ -25,7 +25,7 @@ export class DropdownLocator extends CustomLocator {
   constructor(
     page: Page,
     selector: string,
-    optionSelector = "//ul[contains(@class, 'search-result')]/li[contains(text(), '%s')]"
+    optionSelector = "//ul[contains(@class, 'search-result')]/li[normalize-space()='%s']"
   ) {
     super(page, selector);
     this.optionLocator = new CustomLocator(page, optionSelector);

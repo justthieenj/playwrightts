@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 
-class LoginPage {
+class IdentityPage {
   readonly page: Page;
   readonly labelWelcome: Locator;
 
@@ -9,5 +9,4 @@ class LoginPage {
     this.labelWelcome = page.locator("text=Welcome to Identity");
   }
 }
-
-export default LoginPage;
+export default IdentityPage;
