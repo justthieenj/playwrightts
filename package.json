@@ -16,5 +16,9 @@
     "eslint": "^8.22.0",
     "eslint-plugin-playwright": "^0.10.0",
     "otpauth": "^8.0.2"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "printWidth": 150
   }
 }

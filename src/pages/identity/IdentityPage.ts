@@ -1,5 +1,4 @@
 import { Locator, Page } from "@playwright/test";
-import * as util from "util";
 
 class IdentityPage {
   readonly page: Page;
