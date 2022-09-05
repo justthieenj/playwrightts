@@ -14,7 +14,7 @@ export class CustomLocator {
     return this.page.locator(this.selector);
   }
 
-  async setDynamic(...args: string[] | number[]): Promise<Locator> {
+  setDynamic(...args: string[] | number[]): Locator {
     const updatedLocator = util.format(this.selector, ...args);
     return this.page.locator(updatedLocator);
   }
@@ -33,7 +33,6 @@ export class DropdownLocator extends CustomLocator {
 
   async select(value: string) {
     await this.getLocator().click();
-    const optionLocator = await this.optionLocator.setDynamic(value);
-    await optionLocator.click();
+    await this.optionLocator.setDynamic(value).click();
   }
 }

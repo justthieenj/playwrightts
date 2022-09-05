@@ -17,7 +17,7 @@ class DashBoardPage {
 
   async getLeaveTodayList(): Promise<string[]> {
     const today = new Date().toISOString().split("T")[0];
-    const cellLeaveToday = await this.cellsLeaveToday.setDynamic(today, today);
+    const cellLeaveToday = this.cellsLeaveToday.setDynamic(today, today);
     await expect(cellLeaveToday.first()).toBeVisible();
     return cellLeaveToday.allTextContents();
   }

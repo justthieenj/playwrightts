@@ -37,7 +37,7 @@ class InsiderPage {
 
   async openTodayLogTimeModal() {
     const today = new Date().toISOString().split("T")[0];
-    const cellToday = await this.cellCalendar.setDynamic(today);
+    const cellToday = this.cellCalendar.setDynamic(today);
     await cellToday.click();
   }
 
@@ -49,7 +49,7 @@ class InsiderPage {
     await this.txtHours.type(hour);
     await this.txtComment.type(comment);
     await this.btnSaveClose.click();
-    const todayEvent = await this.lblEvent.setDynamic(today, today);
+    const todayEvent = this.lblEvent.setDynamic(today, today);
     await expect(todayEvent).toHaveText(`${hour} ${project}`);
   }
 }
