@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import * as OTPAuth from "otpauth";
-import * as account from "./../../../account.json";
+import { accountData as account } from "./../../utils/data-reader";
 
 class LoginPage {
   readonly page: Page;

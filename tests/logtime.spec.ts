@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test";
-import * as account from "../account.json";
 import IdentityPage from "../src/pages/identity/IdentityPage";
 import LoginPage from "../src/pages/identity/LoginPage";
 import InsiderPage from "../src/pages/insider/InsiderPage";
 import { identityURL, insiderURL } from "../src/utils/constants";
+import { accountData as account } from "../src/utils/data-reader";
 
 test("Test log time insider", async ({ page }) => {
   await test.step(`Navigate to ${identityURL}`, async () => {

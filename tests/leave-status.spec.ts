@@ -1,12 +1,13 @@
 import { expect, test } from "@playwright/test";
 import * as fs from "fs";
-import * as account from "../account.json";
 import IdentityPage from "../src/pages/identity/IdentityPage";
 import LoginPage from "../src/pages/identity/LoginPage";
 import DashBoardPage from "../src/pages/leave/DashboardPage";
 import { identityURL, leaveURL } from "../src/utils/constants";
+import { accountData as account } from "../src/utils/data-reader";
+import sendMessage from "../src/utils/slack";
 
-test("Get Leave today list", async ({ page }) => {
+test("Get Leave today list", async ({ page, request }) => {
   await test.step(`Navigate to ${identityURL}`, async () => {
     await page.goto(identityURL);
   });
@@ -30,4 +31,5 @@ test("Get Leave today list", async ({ page }) => {
 
   // save to file
   fs.writeFileSync("emp_off_today.txt", empList.toString());
+  await sendMessage(request, `Employees off today:\n${empList}`);
 });
