@@ -7,7 +7,7 @@ import { identityURL, leaveURL } from "../src/utils/constants";
 import { accountData as account } from "../src/utils/data-reader";
 import sendMessage from "../src/utils/slack";
 
-test("Get Leave today list", async ({ page, request }) => {
+test("Get employees leave today", async ({ page, request }) => {
   await test.step(`Navigate to ${identityURL}`, async () => {
     await page.goto(identityURL);
   });
