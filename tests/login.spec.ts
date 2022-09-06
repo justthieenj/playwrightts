@@ -1,7 +1,7 @@
-import { test, expect } from "@playwright/test";
-import LoginPage from "../src/pages/identity/LoginPage";
+import { expect, test } from "@playwright/test";
 import IdentityPage from "../src/pages/identity/IdentityPage";
-import * as account from "./../account.json";
+import LoginPage from "../src/pages/identity/LoginPage";
+import { accountData as account } from "../src/utils/data-reader";
 
 test("Test login sts insider", async ({ page }) => {
   await page.goto("https://identity.saigontechnology.vn/");
