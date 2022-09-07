@@ -5,7 +5,7 @@ import LoginPage from "../src/pages/identity/LoginPage";
 import DashBoardPage from "../src/pages/leave/DashboardPage";
 import { identityURL, leaveURL } from "../src/utils/constants";
 import { accountData as account } from "../src/utils/data-reader";
-import sendMessage from "../src/utils/slack";
+import { sendMessage } from "../src/utils/slack";
 
 test("Get employees leave today", async ({ page, request }) => {
   await test.step(`Navigate to ${identityURL}`, async () => {
@@ -23,7 +23,7 @@ test("Get employees leave today", async ({ page, request }) => {
     await page.goto(leaveURL);
   });
 
-  let empList;
+  let empList = [];
   await test.step("Get today off employees", async () => {
     const leavePage = new DashBoardPage(page);
     empList = await leavePage.getLeaveTodayList();
@@ -31,5 +31,5 @@ test("Get employees leave today", async ({ page, request }) => {
 
   // save to file
   fs.writeFileSync("emp_off_today.txt", empList.toString());
-  await sendMessage(request, `Employees off today:\n${empList}`);
+  await sendMessage(request, `Employees off today (${empList.length}):\n${empList}`);
 });

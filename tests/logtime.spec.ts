@@ -4,8 +4,9 @@ import LoginPage from "../src/pages/identity/LoginPage";
 import InsiderPage from "../src/pages/insider/InsiderPage";
 import { identityURL, insiderURL } from "../src/utils/constants";
 import { accountData as account } from "../src/utils/data-reader";
+import { sendResultNoti } from "../src/utils/slack";
 
-test("Test log time insider", async ({ page }) => {
+test("Test log time insider today", async ({ page, request }, testResult) => {
   await test.step(`Navigate to ${identityURL}`, async () => {
     await page.goto(identityURL);
   });
@@ -26,4 +27,6 @@ test("Test log time insider", async ({ page }) => {
     await insiderPage.openTodayLogTimeModal();
     await insiderPage.logTime("8", "1x - Normal working days", "Code", "Project X", "Check input comment with 20 characters");
   });
+
+  await sendResultNoti(request, testResult);
 });
