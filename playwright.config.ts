@@ -41,6 +41,7 @@ const config: PlaywrightTestConfig = {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
     headless: false,
+    navigationTimeout: 30000,
   },
 
   /* Configure projects for major browsers */
