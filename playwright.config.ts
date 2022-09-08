@@ -63,6 +63,7 @@ const config: PlaywrightTestConfig = {
       name: 'firefox',
       use: {
         ...devices['Desktop Firefox'],
+        screenshot: "on",
       },
     },
 
@@ -70,6 +71,7 @@ const config: PlaywrightTestConfig = {
       name: 'webkit',
       use: {
         ...devices['Desktop Safari'],
+        screenshot: "on",
       },
     },
 
@@ -92,14 +94,16 @@ const config: PlaywrightTestConfig = {
       name: 'msedge',
       use: {
         channel: 'msedge',
+        screenshot: "on",
       },
     },
-    {
-      name: 'chrome',
-      use: {
-        channel: 'chrome',
-      },
-    },
+    // {
+    //   name: 'chrome',
+    //   use: {
+    //     channel: 'chrome',
+    //     screenshot: "on",
+    //   },
+    // },
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
