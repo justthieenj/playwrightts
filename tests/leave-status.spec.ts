@@ -4,7 +4,7 @@ import IdentityPage from "../src/pages/identity/IdentityPage";
 import LoginPage from "../src/pages/identity/LoginPage";
 import DashBoardPage from "../src/pages/leave/DashboardPage";
 import { identityURL, leaveURL } from "../src/utils/constants";
-import { accountData as account } from "../src/utils/data-reader";
+import { accountData } from "../src/utils/data-reader";
 import { sendMessage } from "../src/utils/slack";
 
 test("Get employees leave today", async ({ page, request }) => {
@@ -14,7 +14,7 @@ test("Get employees leave today", async ({ page, request }) => {
 
   await test.step("Login", async () => {
     const loginPage = new LoginPage(page);
-    await loginPage.login(account.empCode, account.password);
+    await loginPage.login(accountData);
     const identityPage = new IdentityPage(page);
     await expect(identityPage.labelWelcome).toBeVisible();
   });

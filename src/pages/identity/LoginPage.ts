@@ -1,6 +1,5 @@
 import { Locator, Page } from "@playwright/test";
 import * as OTPAuth from "otpauth";
-import { accountData as account } from "./../../utils/data-reader";
 
 class LoginPage {
   readonly page: Page;
@@ -19,20 +18,18 @@ class LoginPage {
     this.btnVerify = page.locator("#verify-opt");
   }
 
-  async enterOTPCode() {
-    const token = new OTPAuth.TOTP({
-      secret: account.totpSecret,
-    });
+  async enterOTPCode(totpSecret: string) {
+    const token = new OTPAuth.TOTP({ secret: totpSecret });
     const code = token.generate();
     await this.txtOTPCode.type(code);
     await this.btnVerify.click();
   }
 
-  async login(userName: string, password: string) {
-    await this.txtUsername.type(userName);
-    await this.txtPassword.type(password);
+  async login(account: { empCode: string; password: string; totpSecret: string }) {
+    await this.txtUsername.type(account.empCode);
+    await this.txtPassword.type(account.password);
     await this.btnLogin.click();
-    await this.enterOTPCode();
+    await this.enterOTPCode(account.totpSecret);
   }
 }
 

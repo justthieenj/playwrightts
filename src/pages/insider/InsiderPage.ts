@@ -47,7 +47,9 @@ class InsiderPage {
     await this.drpActivity.select(activity);
     await this.drpProject.select(project);
     await this.txtHours.type(hour);
-    await this.txtComment.type(comment);
+    if (comment) {
+      await this.txtComment.type(comment);
+    }
     await this.btnSaveClose.click();
     const todayEvent = this.lblEvent.setDynamic(today, today);
     await expect(todayEvent).toHaveText(`${hour} ${project}`);
