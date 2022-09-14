@@ -25,7 +25,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test leave-status.spec.ts --project=chromium
+        run: npx playwright test example.spec.ts --project=chromium
       - uses: actions/upload-artifact@v2
         if: always()
         with:
