@@ -13,7 +13,7 @@ import { devices } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   testDir: './tests',
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 5 * 60 * 1000, // 5 minutes
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -34,13 +34,14 @@ const config: PlaywrightTestConfig = {
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
-    actionTimeout: 0,
+    actionTimeout: 30000,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
     headless: false,
+    navigationTimeout: 60000,
   },
 
   /* Configure projects for major browsers */
@@ -63,6 +64,7 @@ const config: PlaywrightTestConfig = {
       name: 'firefox',
       use: {
         ...devices['Desktop Firefox'],
+        screenshot: "on",
       },
     },
 
@@ -70,6 +72,7 @@ const config: PlaywrightTestConfig = {
       name: 'webkit',
       use: {
         ...devices['Desktop Safari'],
+        screenshot: "on",
       },
     },
 
@@ -92,14 +95,16 @@ const config: PlaywrightTestConfig = {
       name: 'msedge',
       use: {
         channel: 'msedge',
+        screenshot: "on",
       },
     },
-    {
-      name: 'chrome',
-      use: {
-        channel: 'chrome',
-      },
-    },
+    // {
+    //   name: 'chrome',
+    //   use: {
+    //     channel: 'chrome',
+    //     screenshot: "on",
+    //   },
+    // },
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
