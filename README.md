@@ -24,6 +24,8 @@ To open last report run: `npx playwright show-report`
 
 ## Additions
 
+- [Playwright](https://github.com/microsoft/playwright) github repository.
+
 - Recommend to install `Playwright Test for VSCode` [extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright).
 
 - Use emojis for better commit message refs [here](https://dev.to/babakks/emojis-for-better-git-commit-messages-52fa)
