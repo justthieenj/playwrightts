@@ -25,7 +25,7 @@ test("Test log time insider today", async ({ page, request }, testResult) => {
   await test.step("Log time today", async () => {
     const insiderPage = new InsiderPage(page);
     await insiderPage.openTodayLogTimeModal();
-    await insiderPage.logTime("8", "1x - Normal working days", "Code", "TooGood ODC");
+    await insiderPage.logTime("8", "1x - Normal working days", "Code", "Fusang ODC");
   });
 
   await sendResultNoti(request, testResult);
