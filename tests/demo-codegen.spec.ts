@@ -1,5 +1,6 @@
-import { test } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
 test("Demo codegen", async ({ page }) => {
-  page.goto("https://playwright.dev/");
+  await page.goto("https://playwright.dev/");
+  await expect(page).toHaveTitle("Playwright");
 });

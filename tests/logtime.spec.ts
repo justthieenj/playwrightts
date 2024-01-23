@@ -6,7 +6,7 @@ import { identityURL, insiderURL } from "../src/utils/constants";
 import { accountData } from "../src/utils/data-reader";
 import { sendResultNoti } from "../src/utils/slack";
 
-test("Test log time insider today", async ({ page, request }, testResult) => {
+test("Log time insider today", async ({ page, request }, testResult) => {
   await test.step(`Navigate to ${identityURL}`, async () => {
     await page.goto(identityURL);
   });

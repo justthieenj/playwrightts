@@ -7,8 +7,6 @@
         "eamodio.gitlens",
         "wix.vscode-import-cost",
         "ritwickdey.liveserver",
-        "pkief.material-icon-theme",
-        "ms-vsliveshare.vsliveshare",
         "esbenp.prettier-vscode"
     ]
 }
