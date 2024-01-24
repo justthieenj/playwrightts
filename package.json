@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "npx playwright test example.spec.ts --project=chromium --headed"
+    "setup": "playwright install",
+    "test": "playwright test example.spec.ts --project=chromium --headed",
+    "report": "playwright show-report"
   },
   "keywords": [],
   "author": "@justthieenj",
